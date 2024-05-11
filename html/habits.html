@@ -1,0 +1,110 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>PoliPlanner</title>
+    <link rel="stylesheet" href="../css/style.css"/>
+    <link rel="stylesheet" href="../css/bootstrap.css"/>
+</head>
+<body>
+    <header>
+        <div class="cntr">
+            <div class="rw">
+                <h4 class="logo">POLI PLANNER</h4>
+    
+                <ul class="navg">
+                    <li><a href="index.html" >Home </a></li>
+                    <li><a href="tasks.html">tasks</a></li>
+                    <li><a href="habits.html" id="clicked">habits</a></li>
+                    <li><a href="">reminders</a></li>
+                </ul>
+
+                <ul class="icon">
+                    <li><a href=""><img src="../images_/🦆 icon _profile circled_.png" alt="profile"></a></li>
+                </ul>
+            </div>
+        </div>
+    </header>
+    <div class="container">
+        <h2>Eisenhower Matrix Todo List</h2>
+        <div class="row">
+            <div class="col-md-3">
+                <div class="quadrant" id="urgent-important">
+                    <h3>Important and Urgent</h3>
+                    <input type="text" class="form-control" id="quadrant1Input" placeholder="Add task...">
+                    <button onclick="addTask('quadrant1')" class="btn btn-primary mt-2">Add Task</button>
+                    <div id="quadrant1" class="mt-3">
+                        <!-- Tasks will be added here -->
+                    </div>
+                </div>
+            </div>
+            <div class="col-md-3">
+                <div class="quadrant" id="not-urgent-important">
+                    <h3>Important but Not Urgent</h3>
+                    <input type="text" class="form-control" id="quadrant2Input" placeholder="Add task...">
+                    <button onclick="addTask('quadrant2')" class="btn btn-primary mt-2">Add Task</button>
+                    <div id="quadrant2" class="mt-3">
+                        <!-- Tasks will be added here -->
+                    </div>
+                </div>
+            </div>
+            <div class="col-md-3">
+                <div class="quadrant" id="urgent-not-important">
+                    <h3>Not Important but Urgent</h3>
+                    <input type="text" class="form-control" id="quadrant3Input" placeholder="Add task...">
+                    <button onclick="addTask('quadrant3')" class="btn btn-primary mt-2">Add Task</button>
+                    <div id="quadrant3" class="mt-3">
+                        <!-- Tasks will be added here -->
+                    </div>
+                </div>
+            </div>
+            <div class="col-md-3">
+                <div class="quadrant" id="not-urgent-not-important">
+                    <h3>Not Important and Not Urgent</h3>
+                    <input type="text" class="form-control" id="quadrant4Input" placeholder="Add task...">
+                    <button onclick="addTask('quadrant4')" class="btn btn-primary mt-2">Add Task</button>
+                    <div id="quadrant4" class="mt-3">
+                        <!-- Tasks will be added here -->
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+    
+        <script>
+            function addTask(quadrantId) {
+                var inputId = quadrantId + 'Input';
+                var taskInput = document.getElementById(inputId).value;
+                if (taskInput.trim() === "") {
+                    return; // Empty task
+                }
+    
+                var ul = document.getElementById(quadrantId);
+                var li = document.createElement("li");
+                li.className = "task-item"; // Add class for styling
+    
+                var checkbox = document.createElement("input");
+                checkbox.type = "checkbox";
+                checkbox.onclick = function() {
+                    // Toggle line-through style when checkbox is clicked
+                    li.style.textDecoration = this.checked ? "line-through" : "none";
+                };
+    
+                var taskText = document.createElement("span");
+                taskText.textContent = taskInput;
+    
+                var deleteButton = document.createElement("span");
+                deleteButton.textContent = "❌";
+                deleteButton.className = "delete";
+                deleteButton.onclick = function() {
+                    li.remove();
+                };
+    
+                li.appendChild(checkbox);
+                li.appendChild(taskText);
+                li.appendChild(deleteButton);
+                ul.appendChild(li);
+                document.getElementById(inputId).value = ""; // Clear input
+            }
+        </script>
+</body>

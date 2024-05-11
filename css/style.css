@@ -17,10 +17,24 @@ header {
     padding-right: 15px;
 }
 
+.cntr {
+    margin-right: auto;
+    margin-left: auto;
+    padding-left: 15px;
+    padding-right: 15px;
+}
+
 .row {
     display: flex;
     align-items: center;
     margin-bottom: 0;
+}
+
+.rw {
+    display: flex;
+    align-items: center;
+    margin-bottom: 0;
+    height: 120px;
 }
 
 .logo {
@@ -32,6 +46,14 @@ header {
 }
 
 .navigation {
+    flex: 1;
+    width: 50%;
+	list-style: none;
+	text-align: center;
+	padding-top: 12px;
+}
+
+.navg {
     flex: 1;
     width: 50%;
 	list-style: none;
@@ -52,7 +74,18 @@ header {
 	margin: 0 10px;
 }
 
+.navg li {
+    display: inline-block;
+	margin: 0 10px;
+}
+
 .navigation a {
+    color: black;
+	font-size: 16px;
+	text-decoration: none;
+}
+
+.navg a {
     color: black;
 	font-size: 16px;
 	text-decoration: none;
@@ -68,6 +101,11 @@ header {
 
 .navigation a:hover {
 	text-shadow: 0 4px 4px rgb(0, 0, 0, 0.25);
+    color: black;
+}
+
+.navg a:hover {
+    text-shadow: 0 4px 4px rgb(0, 0, 0, 0.25);
     color: black;
 }
 
@@ -102,5 +140,81 @@ header {
     margin: 0;
 }
 
+.start-button {
+  border: none;
+  border-radius: 7px;
+  background-color: #1287C4;
+  color: white;
+  padding: 5px 10px 5px 10px;
+}
+.main-img{
+    float: right;
+    height: 500px;
+}
 
+input[type="text"] {
+    width: 100%;
+    padding: 10px;
+    margin-bottom: 10px;
+    border: 1px solid #ccc;
+    border-radius: 5px;
+}
+        button {
+            padding: 10px 20px;
+            background-color: #4CAF50;
+            color: white;
+            border: none;
+            border-radius: 5px;
+            cursor: pointer;
+        }
+        button:hover {
+            background-color: #45a049;
+        }
+        ul {
+            list-style-type: none;
+            padding: 0;
+        }
+        li {
+            margin-bottom: 10px;
+        }
+        body {
+            font-family: Arial, sans-serif;
+        }
+        h2 {
+            text-align: center;
+        }
+        .matrix {
+            display: flex;
+            justify-content: space-between;
+            margin-top: 20px;
+        }
+        .quadrant {
+            height: 400px;
+            flex: 1;
+            border-radius: 5px;
+            padding: 10px;
+        }
+        .quadrant h3 {
+            margin-top: 0;
+        }
+        ul {
+            list-style-type: none;
+            padding: 0;
+        }
+        li {
+            margin-bottom: 10px;
+            cursor: pointer;
+        }
+        .task-item {
+            display: flex;
+            align-items: center;
+        }
 
+        .task-item input[type="checkbox"] {
+            margin-right: 10px;
+        }
+
+        .delete {
+            margin-left: 10px;
+            cursor: pointer;
+        }
