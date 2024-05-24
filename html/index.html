@@ -3,27 +3,23 @@
 <head>
     <meta charset="UTF-8">
     <title>PoliPlanner</title>
-    <link rel="stylesheet" href="../css/style.css"/>
-    <link rel="stylesheet" href="../css/bootstrap.css"/>
+    <link rel="stylesheet" href="css/style.css"/>
+    <link rel="stylesheet" href="css/bootstrap.css"/>
 </head>
 <body>
     <header>
         <div class="cntr">
             <div class="rw">
-                <h4 class="logo">POLI PLANNER</h4>
-    
-                <ul class="navg">
-                    <li><a href="index.html" id="clicked">Home </a></li>
-                    <li><a href="tasks.html">tasks</a></li>
-                    <li><a href="help.html">help</a></li>
-                </ul>
-
-                <ul class="icon">
-                    <li><a href=""><img src="../images_/🦆 icon _profile circled_.png" alt="profile"></a></li>
+                <div class="logo">
+                    <a href="index.html" class="home-link">POLI PLANNER</a>
+                </div>
+                <ul class="icon-item">
+                    <li><a href=""><img src="images_/Settings.png" alt="Settings"></a></li>
+                    <li><a href="help.html"><img src="images_/Question Mark.png" alt="Question_Mark"></a></li>
                 </ul>
             </div>
         </div>
-    </header>
+    </header>    
         <main>
             <div class="row">
                 <div class="col">
@@ -35,7 +31,7 @@
                     </div>
                     <p id="big_text">Organize<br>Your Task</p> 
                     <p style="margin: 0 0 0 20px;">Welcome to the Poli Planner Web App!<br>This is your central hub for managing tasks,<br>staying organized, and boosting productivity.</p>
-                    <button class="start-button">
+                    <button class="start-button" onclick="location.href='tasks.html'">
                         START PLANNING
                         <div class="arrow-wrapper">
                             <div class="arrow"></div>
@@ -43,7 +39,7 @@
                     </button>
                 </div>
                 <div class="col">
-                    <img class="main-img" src="../images_/imac.png" alt="imac">
+                    <img class="main-img" src="images_/imac.png" alt="imac">
                 </div>
             </div>
         </main>
