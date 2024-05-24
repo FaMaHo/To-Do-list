@@ -42,43 +42,84 @@ header {
 .rw {
     display: flex;
     align-items: center;
-    margin-bottom: 0;
+    justify-items: space-between;
     height: 80px;
+    width: 100%;
 }
 
 .logo {
     flex: 0 0 auto;
-    width: 25%;
     font-size: 24px;
     font-weight: bold;
     text-shadow: 1px 0 rgb(148, 148, 148);
 }
 
-.navg {
-    flex: 1;
-    width: 50%;
-    list-style: none;
-    text-align: center;
-    padding-top: 12px;
-}
-
-.icon {
-    flex: 0 0 auto;
-}
-
-.icon img {
-    height: 30px;
-}
-
-.navg li {
-    display: inline-block;
-    margin: 0 10px;
-}
-
-.navg a {
-    color: var(--text-color);
-    font-size: 16px;
+.logo .home-link {
     text-decoration: none;
+    color: var(--text-color);
+}
+
+.group {
+    display: flex;
+    line-height: 28px;
+    align-items: center;
+    justify-content: center;
+    position: relative;
+    flex: 1;
+    max-width: 250px;
+    justify-content: center;
+    width: 100%;
+   }
+
+.search-input {
+    width: 100%;
+    height: 30px;
+    line-height: 28px;
+    padding: 0 1rem;
+    padding-left: 2.5rem;
+    border: 2px solid transparent;
+    border-radius: 8px;
+    outline: none;
+    background-color: #f3f3f4;
+    color: #0d0c22;
+    transition: .3s ease;
+}
+   
+   .search-input::placeholder {
+    color: rgb(176, 176, 176);
+   }
+   
+   .search-input:focus, .search-input:hover {
+    outline: none;
+    border-color: var(--primary-color);
+    background-color: var(--secondary-color);
+    box-shadow: 0 0 0 4px rgba(102, 140, 255, 0.05);
+   }
+   
+   .icon {
+    position: absolute;
+ left: 1rem;
+ fill: #9e9ea7;
+ width: 1rem;
+ height: 1rem;
+   } 
+   
+   .icon-item {
+    display: flex;
+    align-items: center;
+    list-style: none;
+    margin-left: auto;
+   }
+
+.icon-item a img {
+    height: 25px;
+    margin: 3px;
+    margin-top: 25px;
+}
+
+.icon-item li {
+    display: inline-block;
+    margin: 0 5px;
 }
 
 #clicked {
@@ -89,19 +130,31 @@ header {
     text-shadow: 0 4px 4px rgba(0, 0, 0, 0.25);
 }
 
-.navg a:hover {
+.logo a:hover{
     text-shadow: 0 4px 4px rgba(0, 0, 0, 0.25);
-    color: var(--text-color);
+    color: var(--text-color); 
 }
 
-.icon li {
+.icon-item li {
     display: inline-block;
     margin: 0 5px;
 }
 
-.icon a:hover {
-    border-radius: 20%;
-    box-shadow: 0 4px 4px rgba(0, 0, 0, 0.25);
+@media (max-width: 768px) {
+    .rw {
+        flex-direction: column;
+        height: auto;
+    }
+
+    .logo, .group, .icon-item {
+        width: 100%;
+        text-align: center;
+        padding-top: 10px;
+    }
+
+    .group {
+        margin-top: 10px;
+    }
 }
 
 .task-planner {
@@ -461,3 +514,98 @@ h2 {
         height: 20px;
     }
 }
+
+.cardd {
+    --box-background: rgb(255, 255, 255, 0.3);
+    background-color: var(--box-background);
+    box-shadow: var(--box-shadow);
+    border-radius: 10px;
+    padding: 20px;
+    width: 350px;
+    display: flex;
+    flex-direction: column;
+    margin: 0 auto; /* Center the card horizontally */
+    margin-top: 20px;
+}
+
+.title {
+    font-size: 24px; /* Use large text size */
+    font-weight: bold;
+    text-align: center;
+    color: var(--text-color); /* Match text color */
+}
+
+.form {
+    margin-top: 20px;
+    display: flex;
+    flex-direction: column;
+}
+
+.group-card {
+    position: relative;
+}
+
+.form .group-card label {
+    font-size: var(--small-text-size);
+    color: var(--highlight-color);
+    position: absolute;
+    top: -10px;
+    left: 10px;
+    background-color: var(--box-background); 
+    transition: all .3s ease;
+}
+
+.form .group-card input,
+.form .group-card textarea {
+    padding: 10px;
+    border-radius: 5px;
+    border: 1px solid var(--input-border-color);
+    margin-bottom: 20px;
+    outline: 0;
+    width: 100%;
+    background-color: transparent;
+    color: var(--text-color);
+}
+
+.form .group-card input::placeholder,
+.form .group-card textarea::placeholder {
+    color: var(--highlight-color);
+}
+
+.form .group-card input:focus,
+.form .group-card textarea:focus {
+    border-color: var(--input-focus-border-color);
+}
+
+.form .group-card input:focus + label,
+.form .group-card textarea:focus + label {
+    top: -10px;
+    left: 10px;
+    background-color: rgb(255, 255, 255, 0.6);
+    color: var(--primary-color);
+    font-weight: bold;
+    font-size: var(--small-text-size);
+}
+
+.form .group-card textarea {
+    resize: none;
+    height: 100px;
+}
+
+.form button {
+    background-color: var(--primary-color);
+    color: var(--secondary-color);
+    border: none;
+    border-radius: 5px;
+    padding: 10px;
+    font-size: 16px;
+    cursor: pointer;
+    transition: all 0.3s ease;
+}
+
+.form button:hover {
+    background-color: var(--hover-color);
+}
+
+  
+  
