@@ -3,8 +3,9 @@
 <head>
     <meta charset="UTF-8">
     <title>PoliPlanner</title>
-    <link rel="stylesheet" href="css/style.css"/>
-    <link rel="stylesheet" href="css/bootstrap.css"/>
+    <link rel="stylesheet" href="../css/style.css">
+    <link rel="stylesheet" href="../css/bootstrap.css">
+    <link rel="icon" href="https://i.pinimg.com/564x/df/ab/51/dfab51ae719ea1f22d004fd833aac92c.jpg" type="image/x-icon">
 </head>
 <body>
     <header>
@@ -14,34 +15,79 @@
                     <a href="index.html" class="home-link">POLI PLANNER</a>
                 </div>
                 <ul class="icon-item">
-                    <li><a href=""><img src="images_/Settings.png" alt="Settings"></a></li>
-                    <li><a href="help.html"><img src="images_/Question Mark.png" alt="Question_Mark"></a></li>
+                    <li>
+                        <label class="switch">
+                            <input type="checkbox" id="dark-mode-toggle">
+                            <span class="slider"></span>
+                        </label>
+                        <a href="help.html">
+                            <img id="question-mark" src="../images_/Question Mark.png" alt="Question Mark">
+                        </a>
+                    </li>
                 </ul>
             </div>
         </div>
-    </header>    
-        <main>
-            <div class="row">
-                <div class="col">
-                    <div class="task-planner" >
-                        <svg height="5" width="47" xmlns="">
-                            <line x1="15" y1="0" x2="47" y2="0" style="stroke:#6F6E6E;stroke-width:1;"/>
-                        </svg>
-                        <p id="small_gray">TASK PLANNER</p>
+    </header>
+    <main>
+        <div class="row">
+            <div class="col">
+                <div class="task-planner">
+                    <svg height="5" width="47">
+                        <line x1="15" y1="0" x2="47" y2="0" style="stroke:#6F6E6E;stroke-width:1;"></line>
+                    </svg>
+                    <p id="small_gray">TASK PLANNER</p>
+                </div>
+                <p id="big_text">Organize<br>Your Task</p>
+                <p style="margin: 0 0 0 2vw;">
+                    Welcome to the Poli Planner Web App!<br>
+                    This is your central hub for managing tasks,<br>
+                    staying organized, and boosting productivity.
+                </p>
+                <button class="start-button" onclick="location.href='tasks.html'">
+                    START PLANNING
+                    <div class="arrow-wrapper">
+                        <div class="arrow"></div>
                     </div>
-                    <p id="big_text">Organize<br>Your Task</p> 
-                    <p style="margin: 0 0 0 20px;">Welcome to the Poli Planner Web App!<br>This is your central hub for managing tasks,<br>staying organized, and boosting productivity.</p>
-                    <button class="start-button" onclick="location.href='tasks.html'">
-                        START PLANNING
-                        <div class="arrow-wrapper">
-                            <div class="arrow"></div>
-                        </div>
-                    </button>
-                </div>
-                <div class="col">
-                    <img class="main-img" src="images_/imac.png" alt="imac">
-                </div>
+                </button>
             </div>
-        </main>
-    </body>
+            <div class="col">
+                <img class="main-img" src="../images_/imac--removebg-preview.png" alt="imac">
+            </div>
+        </div>
+    </main>
+    <footer>
+        <div class="tail">
+          <?php echo "<p>Copyright Poli Planner Team &copy;</p>
+        </div>
+      </footer>
+    <script>
+        const darkModeToggle = document.getElementById('dark-mode-toggle');
+        const body = document.body;
+
+        function setDarkModePreference(enabled) {
+            localStorage.setItem('darkModeEnabled', enabled);
+        }
+
+        function applyDarkMode(enabled) {
+            if (enabled) {
+                body.classList.add('dark-mode');
+                darkModeToggle.checked = true;
+            } else {
+                body.classList.remove('dark-mode');
+                darkModeToggle.checked = false;
+            }
+        }
+
+        darkModeToggle.addEventListener('change', () => {
+            const darkModeEnabled = darkModeToggle.checked;
+            setDarkModePreference(darkModeEnabled);
+            applyDarkMode(darkModeEnabled);
+        });
+
+        window.addEventListener('load', () => {
+            const darkModeEnabled = localStorage.getItem('darkModeEnabled') === 'true';
+            applyDarkMode(darkModeEnabled);
+        });
+    </script>
+</body>
 </html>
