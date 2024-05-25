@@ -24,11 +24,17 @@
 }
 
 body {
-    padding-top: 10px;
+    padding-top: 70px;
+    padding-bottom: 80px;
     background: linear-gradient(85deg, var(--background-gradient-start) 16%, var(--background-gradient-middle) 50%, var(--background-gradient-end) 83%);
 }
 
 header {
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    z-index: 999;
     background: linear-gradient(85deg, var(--header-gradient-start) 16%, var(--header-gradient-middle) 50%, var(--header-gradient-end) 83%);
     box-shadow: var(--box-shadow);
     padding: 0;
@@ -36,20 +42,20 @@ header {
 
 .cntr {
     margin: 0 auto;
-    padding: 0 15px;
+    padding: 0 2vw;
 }
 
 .rw {
     display: flex;
     align-items: center;
     justify-items: space-between;
-    height: 80px;
+    height: 70px;
     width: 100%;
 }
 
 .logo {
     flex: 0 0 auto;
-    font-size: 24px;
+    font-size: calc(0.1vw + 22px);
     font-weight: bold;
     text-shadow: 1px 0 rgb(148, 148, 148);
 }
@@ -69,47 +75,22 @@ header {
     max-width: 250px;
     justify-content: center;
     width: 100%;
-   }
-
-.search-input {
-    width: 100%;
-    height: 30px;
-    line-height: 28px;
-    padding: 0 1rem;
-    padding-left: 2.5rem;
-    border: 2px solid transparent;
-    border-radius: 8px;
-    outline: none;
-    background-color: #f3f3f4;
-    color: #0d0c22;
-    transition: .3s ease;
 }
    
-   .search-input::placeholder {
-    color: rgb(176, 176, 176);
-   }
-   
-   .search-input:focus, .search-input:hover {
-    outline: none;
-    border-color: var(--primary-color);
-    background-color: var(--secondary-color);
-    box-shadow: 0 0 0 4px rgba(102, 140, 255, 0.05);
-   }
-   
-   .icon {
+.icon {
     position: absolute;
- left: 1rem;
- fill: #9e9ea7;
- width: 1rem;
- height: 1rem;
-   } 
+    left: 1rem;
+    fill: #9e9ea7;
+    width: 1rem;
+    height: 1rem;
+} 
    
-   .icon-item {
+.icon-item {
     display: flex;
     align-items: center;
     list-style: none;
     margin-left: auto;
-   }
+}
 
 .icon-item a img {
     height: 25px;
@@ -140,40 +121,23 @@ header {
     margin: 0 5px;
 }
 
-@media (max-width: 768px) {
-    .rw {
-        flex-direction: column;
-        height: auto;
-    }
-
-    .logo, .group, .icon-item {
-        width: 100%;
-        text-align: center;
-        padding-top: 10px;
-    }
-
-    .group {
-        margin-top: 10px;
-    }
-}
-
 .task-planner {
     display: flex;
     align-items: center;
-    margin: 50px 0 0 20px;
+    margin: 5vw 0 0 2vw;
 }
 
 #small_gray {
     color: var(--highlight-color);
-    font-size: var(--small-text-size);
+    font-size: calc(0.1vw + 13px);
     padding: 0;
-    margin: 0 0 0 10px;
+    margin: 0 0 0 0.5vw;
     text-align: center;
 }
 
 #big_text {
-    font-size: var(--large-text-size);
-    margin: 0 0 0 20px;
+    font-size: calc(1vw + 64px);
+    margin: 0 0 0 2vw;
 }
 
 .start-button {
@@ -181,17 +145,17 @@ header {
     border: 0;
     border-radius: 10px;
     color: var(--secondary-color);
-    padding: 5px 10px;
+    padding: 1vw 2vw;
     background: var(--primary-color);
     display: flex;
     transition: 0.3s background;
-    box-shadow: 0 5px 15px rgba(0, 0, 0, 0.2);
+    box-shadow: 0 1vw 2vw rgba(0, 0, 0, 0.2);
     animation: button-shimmer 2s infinite;
     transition: all 0.3s ease-in-out;
     align-items: center;
-    gap: 0.6em;
+    gap: 1vw;
     font-weight: bold;
-    margin: 50px 0 0 20px;
+    margin: 3vw 0 0 2vw;
 }
 
 .start-button .arrow-wrapper {
@@ -201,10 +165,10 @@ header {
 }
   
 .start-button .arrow {
-    margin-top: 1px;
-    width: var(--arrow-width);
+    margin-top: 0.1vw; 
+    width: 1.2vw; 
     background: var(--primary-color);
-    height: var(--arrow-stroke);
+    height: 0.2vw;
     position: relative;
     transition: 0.2s;
 }
@@ -214,12 +178,12 @@ header {
     box-sizing: border-box;
     position: absolute;
     border: solid var(--secondary-color);
-    border-width: 0 var(--arrow-stroke) var(--arrow-stroke) 0;
+    border-width: 0 0.2vw 0.2vw 0;
     display: inline-block;
-    top: -3px;
-    right: 3px;
+    top: -0.3vw;
+    right: 0.3vw;
     transition: 0.2s;
-    padding: 3px;
+    padding: 0.3vw;
     transform: rotate(-45deg);
 }
   
@@ -239,7 +203,7 @@ header {
 
 .main-img {
     float: right;
-    height: 500px;
+    height: 50vw;
 }
 
 .messageBox {
@@ -462,59 +426,6 @@ h2 {
     border: 2px solid var(--input-focus-border-color);
 }
 
-/* Media Queries for Responsive Design */
-@media (max-width: 768px) {
-    .rw {
-        flex-direction: column;
-        height: auto;
-    }
-    
-    .logo, .navg, .icon {
-        width: 100%;
-        text-align: center;
-        padding-top: 10px;
-    }
-
-    .task-planner {
-        flex-direction: column;
-        align-items: flex-start;
-        margin: 20px;
-    }
-
-    .start-button {
-        margin: 20px 0 0 0;
-    }
-
-    .main-img {
-        height: 300px;
-        width: 100%;
-    }
-
-    .matrix {
-        flex-direction: column;
-    }
-
-    .quadrant {
-        width: 100%;
-        margin-bottom: 20px;
-    }
-}
-
-@media (max-width: 480px) {
-    #big_text {
-        font-size: 48px;
-    }
-
-    .start-button {
-        font-size: 14px;
-        padding: 8px 12px;
-    }
-
-    .icon img {
-        height: 20px;
-    }
-}
-
 .cardd {
     --box-background: rgb(255, 255, 255, 0.3);
     background-color: var(--box-background);
@@ -524,15 +435,15 @@ h2 {
     width: 350px;
     display: flex;
     flex-direction: column;
-    margin: 0 auto; /* Center the card horizontally */
+    margin: 0 auto; 
     margin-top: 20px;
 }
 
 .title {
-    font-size: 24px; /* Use large text size */
+    font-size: 24px; 
     font-weight: bold;
     text-align: center;
-    color: var(--text-color); /* Match text color */
+    color: var(--text-color); 
 }
 
 .form {
@@ -607,5 +518,214 @@ h2 {
     background-color: var(--hover-color);
 }
 
-  
-  
+.notification {
+    display: none;
+    margin-top: 20px;
+    padding: 10px;
+    border: 1px solid #ccc;
+    background-color: #f4f4f4;
+}
+.notification.success {
+    border-color: green;
+    color: green;
+}
+.notification.error {
+    border-color: red;
+    color: red;
+}
+
+.help-container {
+    max-width: 800px;
+    margin: 0 auto;
+    padding: 20px;
+    font-family: Arial, sans-serif;
+}
+
+.help-container h3 {
+    margin-top: 30px;
+    margin-bottom: 10px;
+}
+
+    #question-mark {
+    margin-bottom: 20px;
+}
+
+.switch {
+    position: relative;
+    display: inline-block;
+    --width-of-switch: 3.5em;
+    --height-of-switch: 2em;
+    --size-of-icon: 1.4em;
+    --slider-offset: 0.3em;
+    width: var(--width-of-switch);
+    height: var(--height-of-switch);
+    margin-top: 25px;
+    margin-right: 20px;
+}
+
+.switch input {
+    opacity: 0;
+    width: 0;
+    height: 0;
+}
+
+.slider {
+    position: absolute;
+    cursor: pointer;
+    top: 0;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    border: 1px solid rgb(179, 194, 195);
+    background-color: #f4f4f5;
+    transition: .4s;
+    border-radius: 30px;
+}
+
+.slider:before {
+    position: absolute;
+    content: "";
+    height: var(--size-of-icon,1.4em);
+    width: var(--size-of-icon,1.4em);
+    border-radius: 20px;
+    left: var(--slider-offset,0.3em);
+    top: 50%;
+    transform: translateY(-50%);
+    background: linear-gradient(40deg,#ff0080,#ff8c00 70%);
+    ;
+    transition: .4s;
+}
+
+input:checked + .slider {
+    background-color: #303136;
+}
+
+input:checked + .slider:before {
+    left: calc(100% - (var(--size-of-icon,1.4em) + var(--slider-offset,0.3em)));
+    background: #303136;
+    box-shadow: inset -3px -2px 5px -2px #8983f7, inset -10px -4px 0 0 #a3dafb;
+}
+
+.dark-mode {
+    --primary-color: #00aaff;
+    --secondary-color: #333;
+    --hover-color: #92c8ec;
+    --text-color: #fff;
+    --highlight-color: #ccc;
+    --shadow-color: rgba(0, 0, 0, 0.5);
+    --background-gradient-start: #1e1e1e;
+    --background-gradient-middle: #282828;
+    --background-gradient-end: #1e1e1e;
+    --header-gradient-start: rgba(50, 50, 50, 0.4);
+    --header-gradient-middle: rgba(60, 60, 60, 0.4);
+    --header-gradient-end: rgba(50, 50, 50, 0.4);
+    --highlight-color: rgb(197, 197, 197);
+}
+
+.dark-mode body {
+    color: var(--text-color);
+    background: linear-gradient(85deg, var(--background-gradient-start) 16%, var(--background-gradient-middle) 50%, var(--background-gradient-end) 83%);
+}
+
+.dark-mode header {
+    color: var(--text-color);
+    background: linear-gradient(85deg, var(--header-gradient-start) 16%, var(--header-gradient-middle) 50%, var(--header-gradient-end) 83%);
+}
+
+.dark-mode .main-img {
+    content: url('../images_/imac-dark-removebg-preview.png');
+}
+.dark-mode #question-mark {
+    content: url('../images_/Question Mark (dark.png');
+}
+.dark-mode h2 {
+    color: var(--text-color);
+}
+.dark-mode .cardd {
+    --box-background: rgba(57, 57, 57, 0.3);
+    background-color: var(--box-background);
+    box-shadow: rgb(118, 118, 119);
+}
+.dark-mode .form .group-card label {
+    color: var(--highlight-color);
+    background-color: var(--box-background); 
+}
+.dark-mode .form .group-card input::placeholder,
+.dark-mode .form .group-card textarea::placeholder {
+    color: white;
+}
+.dark-mode .form .group-card input:focus,
+.dark-mode .form .group-card textarea:focus {
+    border-color: white;
+}
+.dark-mode .form .group-card input:focus + label,
+.dark-mode .form .group-card textarea:focus + label {
+    background-color: rgba(54, 54, 54, 0.6);
+}
+.dark-mode .form button {
+    color: var(--text-color);
+}
+.dark-mode .form button:hover {
+    background-color: rgb(40, 50, 162);
+}
+.dark-mode .notification {
+    border: none;
+    background-color: rgba(57, 57, 57, 0.3);
+}
+.dark-mode .notification.success {
+    border-color: rgb(243, 255, 243);
+    color: rgb(244, 255, 244);
+}
+
+.dark-mode #big_text {
+    color: var(--text-color);
+}
+
+.dark-mode p {
+    color: var(--text-color);
+}
+
+.dark-mode .start-button {
+    background: var(--primary-color);
+}
+
+.dark-mode .start-button:hover {
+    background: var(--hover-color);
+}
+
+.dark-mode h2 {
+    color: var(--text-color);
+}
+
+.dark-mode #taskList {
+    color: var(--text-color);
+}
+
+.dark-mode .help-container h3 {
+    color: var(--text-color);
+}
+
+.dark-mode .help-container p {
+    color: var(--text-color);
+}
+
+.dark-mode .help-container li {
+    color: var(--text-color);
+}
+
+.tail {
+    position: fixed;
+    bottom: 0;
+    left: 0;
+    width: 100%;
+    text-align: center;
+    background: linear-gradient(85deg, var(--header-gradient-start) 16%, var(--header-gradient-middle) 50%, var(--header-gradient-end) 83%);
+    box-shadow: var(--box-shadow);
+    padding: 0;
+    padding-top: 25px;
+    height: 75px;
+  }
+
+.dark-mode .tail {
+    color: var(--text-color);
+}
