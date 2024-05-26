@@ -165,7 +165,7 @@ header {
 }
   
 .start-button .arrow {
-    margin-top: 0.1vw; 
+    margin-top: 0.112vw; 
     width: 1.2vw; 
     background: var(--primary-color);
     height: 0.2vw;
@@ -190,7 +190,7 @@ header {
 .start-button:hover {
     background-color: var(--hover-color);
     animation: button-particles 1s ease-in-out infinite;
-    transform: translateY(-2px);
+    transform: translateY(-0.2vw);
 }
   
 .start-button:hover .arrow {
@@ -633,10 +633,10 @@ input:checked + .slider:before {
 }
 
 .dark-mode .main-img {
-    content: url('../images_/imac-dark-removebg-preview.png');
+    content: url('images_/imac-dark-removebg-preview.png');
 }
 .dark-mode #question-mark {
-    content: url('../images_/Question Mark (dark.png');
+    content: url('images_/Question-Mark-dark.png');
 }
 .dark-mode h2 {
     color: var(--text-color);
@@ -714,9 +714,6 @@ input:checked + .slider:before {
 }
 
 .tail {
-    position: fixed;
-    bottom: 0;
-    left: 0;
     width: 100%;
     text-align: center;
     background: linear-gradient(85deg, var(--header-gradient-start) 16%, var(--header-gradient-middle) 50%, var(--header-gradient-end) 83%);
@@ -724,6 +721,7 @@ input:checked + .slider:before {
     padding: 0;
     padding-top: 25px;
     height: 75px;
+    margin-top: 20px;
   }
 
 .dark-mode .tail {
