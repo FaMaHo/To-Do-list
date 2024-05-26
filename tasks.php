@@ -5,7 +5,7 @@
     <title>PoliPlanner</title>
     <link rel="stylesheet" href="css/style.css">
     <link rel="stylesheet" href="css/bootstrap.css">
-    <link rel="icon" href="https://i.pinimg.com/564x/df/ab/51/dfab51ae719ea1f22d004fd833aac92c.jpg" type="image/x-icon">
+    <link rel="icon" href="images_/icon.png" type="image/x-icon">
 </head>
 <body>
     <?php include 'header.php'; ?>
