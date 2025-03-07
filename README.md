@@ -1,5 +1,5 @@
 PoliPlanner:
- PoliPlanner is a simple to-do list web application that allows users to add and edit tasks, mark them as complete, and delete them. Tasks are stored using PHP cookies, ensuring they persist even after refreshing or reopening the webpage.
+ PoliPlanner is a simple to-do list web application that allows users to add tasks, mark them as complete, and delete them. Tasks are stored using PHP cookies, ensuring they persist even after refreshing or reopening the webpage.
 
 Features:
  1. Add tasks dynamically
